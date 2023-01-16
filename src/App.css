@@ -10,5 +10,16 @@
 }
 
 .todoList {
-    width: 600px;
+  width: 600px;
+}
+
+.addTodoForm {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 20px;
+}
+
+.createTodoMessage {
+  margin-top: 1rem;
 }

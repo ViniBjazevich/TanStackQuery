@@ -26,7 +26,7 @@ export const TodoList = () => {
       <h1 className="todoTitle">Todos:</h1>
       <ul>
         {status === "success" &&
-          posts.data.map((post) => <li>{post.title}</li>)}
+          posts.data.map((post) => <li key={post.id}>{post.title}</li>)}
       </ul>
     </div>
   );
