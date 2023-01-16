@@ -9,7 +9,6 @@ export function getTodos() {
 
 export function createTodo(body) {
   // Not actually creating a todo, just faking it
-  console.log(body);
   return axios({
     method: "post",
     url: "https://jsonplaceholder.typicode.com/posts",

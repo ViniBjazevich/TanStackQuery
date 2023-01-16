@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getTodos } from "../requests/todos";
 
 export const TodoList = () => {
