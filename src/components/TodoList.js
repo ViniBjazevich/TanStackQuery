@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getTodos } from "../requests/todos";
+import { OtherComponent } from "./OtherComponent";
 
 export const TodoList = () => {
+  const [displayComponent, setDisplayComponent] = useState(false);
   const {
     status,
     error,
@@ -20,8 +22,14 @@ export const TodoList = () => {
       <h1 className="todoTitle">Todos:</h1>
       <ul>
         {status === "success" &&
-          posts.data.map((post) => <li key={post.id}>{post.title}</li>)}
+          posts
+            .filter((post) => post.id < 15)
+            .map((post) => <li key={post.id}>{post.title}</li>)}
       </ul>
+      <button onClick={() => setDisplayComponent((prev) => !prev)}>
+        {displayComponent ? "Hide Component" : "Display Component"}
+      </button>
+      {displayComponent && <OtherComponent />}
     </div>
   );
 };
